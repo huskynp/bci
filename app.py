@@ -27,8 +27,8 @@ filtered_data = signal.filtfilt(d, c, filtered_data)
 g, h = signal.butter(2, 80, 'lowpass', fs=fs)  # highcut
 filtered_data = signal.filtfilt(g, h, filtered_data)
 
-b, a = signal.butter(2, [60, 60], 'bandstop', analog=False, fs=fs)  # bandstop
-filtered_data = signal.filtfilt(b, a, filtered_data)
+#b, a = signal.butter(2, [60, 60], 'bandstop', analog=False, fs=fs)  # bandstop
+#filtered_data = signal.filtfilt(b, a, filtered_data)
 
 g, h = signal.butter(2, [1, 3], 'bandpass', analog=False, fs=fs)  # Delta Waves
 delta_waves = signal.filtfilt(g, h, filtered_data)
