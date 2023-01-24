@@ -22,9 +22,8 @@ normalize.adapt(raw_data_features)
 
 #model !!!!
 input_shape = (14980, 14)
-inputs = keras.Input(14,)
-hid1 = layers.Dense(units=14980)(inputs) #random hiddne layers
-hid2 = layers.Dense(units=14980)(hid1)
-output = layers.Dense(units=1)(hid2) #random output layers 
+inputs = keras.Input(14980, 14)
+hid1 = layers.LSTM(units=14)(inputs) #random hiddne layers
+output = layers.Dense(units=1)(hid1) #random output layers 
 model = keras.Model(inputs, output)
 model.summary()
