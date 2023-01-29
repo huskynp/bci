@@ -20,8 +20,6 @@ cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,
                                                  verbose=1)
 
 
-
-
 #raw_data.head()
 raw_data_features = raw_data.copy()
 target = raw_data_features.pop("target")
