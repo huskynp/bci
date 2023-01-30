@@ -46,7 +46,7 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 
 model.summary()
 
-history = model.fit(X_train, y_train, epochs=100, batch_size=32, verbose=2, validation_split=.1)
+history = model.fit(X_train, y_train, epochs=300, batch_size=32, verbose=2, validation_split=.1)
             
 _, acc = model.evaluate(X_test, y_test)
 ypred = model.predict(X_test)
