@@ -21,7 +21,6 @@ X = df.iloc[:, :-1].to_numpy()
 X = StandardScaler().fit_transform(X)
 # Select the classificaiton labels
 y = df.iloc[:,14].to_numpy()
-
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
 checkpoint_path = "checkpoints/eeg.ckpt"
 checkpoint_dir = os.path.dirname(checkpoint_path)
@@ -46,11 +45,12 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 
 model.summary()
 
-history = model.fit(X_train, y_train, epochs=300, batch_size=32, verbose=2, validation_split=.1)
+history = model.fit(X_train, y_train, epochs=100, batch_size=32, verbose=2, validation_split=.1)
             
 _, acc = model.evaluate(X_test, y_test)
 ypred = model.predict(X_test)
 auc = roc_auc_score(y_test, ypred)
+model.save('difModel.h5')
 print("Accuracy = %.2f - AUC = %.2f", acc, auc)
 
 # plot the accuracy and loss during the training
