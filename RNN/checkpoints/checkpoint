@@ -1,0 +1,2 @@
+model_checkpoint_path: "eeg.ckpt"
+all_model_checkpoint_paths: "eeg.ckpt"
