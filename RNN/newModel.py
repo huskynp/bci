@@ -12,7 +12,7 @@ from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 
 df = pd.read_csv(
-    "EEG_Data.csv")
+    "rawData.csv")
 
 df = df[(np.abs(stats.zscore(df)) < 5).all(axis=1)]
 
