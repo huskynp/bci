@@ -1,0 +1,35 @@
+.channelgraph{
+    display: inline-block;
+    width:97vw;
+    height:25vh;
+    margin-bottom:1vh;
+}
+
+.preprocess{
+    margin-top:2vh;
+    width:97vw;
+    height:35vh;
+}
+
+h1, h2, h3{
+    text-align: center;
+    margin:2vh;
+}
+
+h1{
+    font-size:64px;
+}
+
+.indicator{
+    width:97vw;
+    height:3em;
+    margin-top:5vh;
+    margin-left:1vw;
+    background-color:lightcoral;
+    text-align: center;
+    line-height:3em;
+}
+
+.indicator.yes{
+    background-color: lightgreen;
+}
